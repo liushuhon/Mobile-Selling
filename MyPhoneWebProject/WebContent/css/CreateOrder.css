@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+.orderHeadArea {
+	height: 118px;
+	width: 100%;
+}
+
+.orderHead {
+	width: 1200px;
+	height: 118px;
+	margin: 0px auto;
+}
+
+.marginright0 {
+	margin-right: 0px;
+	!
+	important;
+}
+
+.left-logo {
+	margin-top: 23px;
+	float: left;
+	background: url(../images/logo20170312023120.png);
+	height: 50px;
+	width: 217px;
+}
+
+.right-progress {
+	margin-right: 1px;
+	float: right;
+	margin-top: 30px;
+}
+
+.progress-cart {
+	padding: 12px 28px;
+    float: left;
+    margin-right: 1px;
+    color: black;
+    background: #f3f3f3;
+    font-size: 16px;
+    font-family: 'Tahoma', \5FAE\8F6F\96C5\9ED1;
+}
+
+.progress-confirm {
+
+    padding: 12px 28px;
+    float: left;
+    margin-right: 1px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Tahoma', \5FAE\8F6F\96C5\9ED1;
+    background: #f3f3f3;
+    color: black;
+}
+.progress-submit {
+	padding: 12px 28px;
+    float: left;
+    margin-right: 1px;
+    font-size: 16px;
+    font-family: 'Tahoma', \5FAE\8F6F\96C5\9ED1;
+    background: #e01d20;
+    color: white;
+}
+.layout {
+    width: 100%;
+    height: 500px;
+}
+.showSuccessArea{
+	width: 1200px;
+    height: 88px;
+    margin: 0px auto;
+    background: #f1f8ee;
+}
+.area-font{
+    float: left;
+    font-size: 18px;
+    color: #7baa61; 
+    margin-top: 31px;
+ 
+}
+.checkOrder{
+	float: left;
+    font-size: 13px;
+    color: #777;
+    margin-top: 56px;
+    margin-left: -79px;
+}
+.checkOrder:hover{
+	cursor:pointer;
+}

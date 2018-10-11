@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>上传图片demo</title>
+    <link rel="stylesheet" href="../css/NewFile.css" type="text/css" />
+    <script src="../js/cropbox.js"></script>
+    <style>
+        .container
+        {
+            position: absolute;
+            top: 10%; left: 10%; right: 0; bottom: 0;
+        }
+        .action
+        {
+            width: 400px;
+            height: 30px;
+            margin: 10px 0;
+        }
+        .cropped>img
+        {
+            margin-right: 10px;
+        }
+    </style>
+    <script src="/study/js/jquery-2.1.1/jquery.js"></script>
+</head>
+<body>
+
+<script src="/study/uploadImg/js/cropbox/cropbox.js"></script>
+<div class="container">
+    <div class="imageBox">
+        <div class="thumbBox"></div>
+        <div class="spinner" style="display: none">Loading...</div>
+    </div>
+    <div class="action">
+        <input type="file" id="file" style="float:left; width: 250px">
+        <input type="button" id="btnCrop" value="Crop" style="float: right">
+        <input type="button" id="btnZoomIn" value="+" style="float: right">
+        <input type="button" id="btnZoomOut" value="-" style="float: right">
+    </div>
+    <div class="cropped">
+
+    </div>
+    
+    <div id="showImage"></div>
+</div>
+<script type="text/javascript">
+/* FileReader对象的使用：借助FileReader对象来获取上传图片的base64，就可以在客户端显示该图片，同时，还可以把图片的base64发送到服务端，保存起来（也及上传图片） */
+ 
+ /* 使用FileReader对象，web应用程序可以异步的读取存储在用户计算机上的文件，可以使用File对象，或者Blob对象来指定所要读取的文件或数据。 */
+    window.onload = function() {
+        var options =
+        {
+            imageBox: '.imageBox',
+            thumbBox: '.thumbBox',
+            spinner: '.spinner',
+            imgSrc: ''//这里可以设置默认图片
+        }
+        var cropper = new cropbox(options);
+        
+        
+        //首先为元素添加一个监听事件，目的是检查选择文件是否发生 变化。
+        document.querySelector('#file').addEventListener('change', function(){
+            var reader = new FileReader();
+            //绑定load事件
+            reader.onload = function(e) {
+            	//console.log(e.target.result);
+            	//e.target.result获取到的是base64编码
+                options.imgSrc = e.target.result;
+                cropper = new cropbox(options);
+            }
+            //当FileReader对象通过readAsDataURL读取数据成功后，就会触发load事件，target中的result属性的值就是该文件的base64数据
+            reader.readAsDataURL(this.files[0]);
+           // this.files = [];
+        })
+        
+        //剪裁
+        document.querySelector('#btnCrop').addEventListener('click', function(){
+            var img = cropper.getDataURL();
+            document.querySelector('.cropped').innerHTML += '<img src="'+img+'">';
+            $.ajax({
+            	method : 'post',
+				url : "/study/servlet/uploadImgServlet",
+				type:"text",
+				data: {"img":img},
+				success:function(data){
+					$("#showImage").html('<img src="'+data+'">');
+				},
+				error:function(error){
+					alert(error);
+				}
+            });
+        })
+        
+        //放大
+        document.querySelector('#btnZoomIn').addEventListener('click', function(){
+            cropper.zoomIn();
+        })
+        
+        //缩小
+        document.querySelector('#btnZoomOut').addEventListener('click', function(){
+            cropper.zoomOut();
+        })
+    };
+</script>
+
+</body>
+</html>

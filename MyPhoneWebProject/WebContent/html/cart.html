@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>购物车</title>
+<link rel="stylesheet" href="../css/TopUserArea.css"> 
+<link rel="stylesheet" href="../css/cart.css"> 
+<script src="../lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/TopUserArea.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+<script  src="../js/cart.js"></script>
+ 
+</head>
+<body onpageshow=showCart()>
+<div class="userArea">
+	<div class="layout">
+		<div class="userArea-left">
+			<a href="../html/Index.html"><span>华为官网 | 荣耀官网 | 软件应用 | 花粉俱乐部 | Select Region</span></a>
+		</div>
+		<div class="userArea-right">
+			<span id="userId" class='userId'></span> 
+			<a href='../html/VrewOrder.html'><span>&nbsp;&nbsp;&nbsp;我的订单</span></a> 
+			<a href='../html/cart.html'><span>&nbsp;&nbsp;&nbsp;购物车</span>
+			<span class="spCart-span" > <em>(</em><em id='spCart-span'>0</em><em>)</em></span>
+			 </a> 
+			
+		</div>
+	</div>
+</div>
+ <div class="orderHeadArea">
+ 	<div class="orderHead">
+	 	<div class="left-logo" onclick="window.open('../html/Index.html','_self')" >
+	 	</div>
+ 		<div class="right-progress">
+ 			<div class="progress-cart" id="progress-cart"  > 
+ 			1我的购物车
+ 			</div>
+ 			<div class="progress-confirm" id="progress-confirm" >
+ 			2填写核对订单
+ 			</div>
+ 			<div class="progress-submit marginright0" id="progress-submit"  >
+ 			3提交订单
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ 	<div class="goods-list-area">
+ 		<div id="content" class="goods-list ">
+ 			<div id = "title" class="title">
+ 				<table    style=" width: 100%; padding-top: 5px;">
+ 					<tr>
+ 						<th class="tr-check">
+ 							<input type="checkbox" class="vam" name='cball' id="allcheck" onclick="checkallBox()"  >
+ 						</th>
+ 						<th class="th-goods">商品</th>
+ 						<th class="th-unitPrice">价格(元)</th>
+ 						<th class="th-count">数量</th>
+ 						<th class="th-subTotal">小计(元)</th>
+ 						<th class="th-operation">操作</th>
+ 					</tr>
+ 				</table>
+ 			</div>
+ 			<div id="goods"  >
+ 				<div id = "Middle" class="goods-table"  cellpadding="0" cellspacing="0">
+ 				</div>
+ 			</div>
+ 			<div class="sum"> 
+ 				<input type="checkbox" name='cball' class="vam sum-checkbox" id="allcheck2" onclick="checkallBox2()">
+ 				<span class="sum-span">全选</span>
+ 				<div class="btn">
+ 					<input class="sub-btn" type="button" value="去结算" onclick="goConfirmCart()">
+ 				</div>
+ 				<div class="totalpriceArea"> 
+ 					<span class="sum-price" >合计(不含运费)：￥</span><span id="total" class="sum-price sum-price-font">0</span><span class="sum-price">.00</span>
+ 				</div>
+ 				
+ 			</div>
+ 		</div>
+ 		 
+ 	</div>
+ 
+</body>
+</html>

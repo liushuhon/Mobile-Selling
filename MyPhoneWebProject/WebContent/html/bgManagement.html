@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>后台管理</title>
+<script src="../lib/jquery/jquery.js"></script>
+
+<link rel="stylesheet" href="../css/backManage/phone/bgManagement.css">
+<script type="text/javascript" src="../js/bgManagement/bgManagement.js"></script>
+<script type="text/javascript"	src="../js/bgManagement/phone/showPhone.js"></script>   
+<script type="text/javascript"	src="../js/bgManagement/user/showUser.js"></script> 
+<script type="text/javascript"	src="../js/bgManagement/order/showOrder.js"></script> 
+<script type="text/javascript"	src="../js/bgManagement/stock/showStock.js"></script> 
+<script src="../js/bgManagement/user/editUser.js"></script>
+<script src="../js/bgManagement/phone/addPhone.js"></script>
+<script src="../js/bgManagement/phone/uploadPhoto.js"></script>
+<script src="../js/bgManagement/phone/phoneVerify.js"></script>
+<link rel="stylesheet" href="../css/backManage/phone/showPhone.css">
+<link rel="stylesheet" href="../css/backManage/phone/uploadPhoto.css" type="text/css" />
+</head>
+<body>
+	<a href="Index.html" style="text-decoration: none;">
+	<div class="head_center" >
+		<div class="main-logo">
+			<img src="../images/huaweiLogo.png">
+		</div>
+		<div class="website-name">
+			<b class="font">|</b> <b class="font">华为商城</b>
+		</div>
+	</div>
+	</a>
+	<div class="content">
+		<div class="reg-content">
+			<!-- <h1 class="center">后台管理</h1> -->
+			<div class="left">
+				<ul>
+					<li id="nav_0" class="category-item" onclick="showUserMg()">用户管理</li>
+					<li id="nav_1" class="category-item" onclick="showPhoneMg()">手机管理</li>
+					<li id="nav_2" class="category-item" onclick="showOrderMg()">订单管理</li>
+					<li id="nav_3" class="category-item" onclick="showBackInfoMg()">库存管理</li>
+				</ul>
+			</div>
+			<div class="right">
+				<div id="showUserMg" class="right-content">
+					  <div class="title center">
+						<ul class="inline title-ul">
+							<select id="usermark" class="select">
+								<option value="usercode">编码</option> 
+								<option value="unit">单位</option>
+							</select>
+						</ul>
+						<input type="text" id="uservalue" class="search" placeholder="搜索...">
+						<a type="button" class="btn" onclick='searchUserByMark()'>搜索</a> 
+					</div>
+					  <div>
+						<table id="userTable" class="table no-padding">
+						</table>
+						<div class="page-class">
+							<span>共</span> <span id="totalPage0"></span> <span>页</span> <span>
+								当前页：</span><span id="currentPage0"></span>
+							<button class="page-btn" onclick="previousPage0()">上一页</button>
+							<button class="page-btn" onclick="nextPage0()">下一页</button>
+							<button class="page-btn" onclick="firstPage0()">首页</button>
+							<button class="page-btn" onclick="lastPage0()">尾页</button>
+						</div>
+					</div> 
+				</div>
+				<div id="editUser" class="right-content">
+					<div class="user-info">
+						<div class="input-lan">
+							<div class="input-intro">会员编号</div>
+							<div class="input">
+								<input type="text" id="usercode" name="phoneCode"
+									class="input-kuang" placeholder="请输入会员姓名" onblur="checkPhoneCode()"> <label
+									id="lusername" class="verify-class" style="font-size: 12px;color: red;position: absolute;top: 216px;"></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">会员生日:</div>
+							<div class="input">
+								<input type="date" id="birth" name="phoneName"	class="input-kuang" placeholder="请输入会员生日"   onchange="checkPhoneName()">
+								 <label id="lbirth" class="verify-class" style="font-size: 12px;color: red;position: absolute;top:284px;"></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">会员单位:</div>
+							<div class="input">
+								<input type="text" id="unit" name="price" class="input-kuang"	placeholder="请输入会员单位"  onchange="checkPrice()"> 
+								<label id="lunit" class="verify-class" style="font-size: 12px;color: red;position: absolute;top: 351px;" ></label>
+							</div>
+						</div>
+						 
+						<div class="input-lan">
+						<input type="button" class="btnCrop" id="btnCropUser" value="保存" onClick="editUser()" >
+						</div>
+					</div>
+					<!--  -->
+					<!-- <div id="showOrderMg" class="right-content">订单管理</div>
+					<div id="showBackInfoMg" class="right-content">反馈消息</div> -->
+				</div>	
+				<!-- 手机管理 -->
+				<div id="showPhoneMg" class="right-content">
+					<div class="title center">
+						<ul class="inline title-ul">
+							<select id="phonemark" class="select">
+								<option value="phoneName">机名</option>
+								<option value="phoneCode">编号</option>
+								<option value="price">价格</option>
+								 
+							</select>
+						</ul>
+						<input type="text" id="phonevalue" class="search" placeholder="搜索...">
+						<a type="button" class="btn" onclick='searchPhoneByMark()'>搜索</a>
+						<a class=" inline btn" onclick="showAddPhone()">新增</a>
+					</div>
+					<div>
+						<table id="table" class="table no-padding">
+						</table>
+						<div class="page-class">
+							<span>共</span> <span id="totalPage"></span> <span>页</span> <span>
+								当前页：</span><span id="currentPage"></span>
+							<button class="page-btn" onclick="previousPage()">上一页</button>
+							<button class="page-btn" onclick="nextPage()">下一页</button>
+							<button class="page-btn" onclick="firstPage()">首页</button>
+							<button class="page-btn" onclick="lastPage()">尾页</button>
+						</div>
+					</div> 
+				</div>
+				<div id="addPhone" class="right-content">
+					<from name="addPhone">
+					<div class="container" id="container">
+					<div id="imgbox">
+					<div class="imageBox">
+							<div class="thumbBox"></div>
+							<div class="spinner" id="spinner" style="display: none">Loading...</div>
+						</div>
+					</div>
+						<div class="action">
+							<input type="file" id="file" style="float: left; width: 250px">
+						</div>
+						<div class="cropped" style="display: none"></div>
+						<div id="showImage"></div>
+					</div>
+					<div class="phone-info">
+						<div class="input-lan">
+							<div class="input-intro">手机编号:</div>
+							<div class="input">
+								<input type="text" id="phoneCode" name="phoneCode"
+									class="input-kuang" placeholder="请输入手机编号" onblur="checkPhoneCode()"> <label
+									id="lPhoneCode" class="verify-class" style="font-size: 12px;color: red;position: absolute;top: 216px;"></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">手机名字:</div>
+							<div class="input">
+								<input type="text" id="phoneName" name="phoneName"	class="input-kuang" placeholder="请输入手机的名字"   onchange="checkPhoneName()">
+								 <label id="lPhoneName" class="verify-class" style="font-size: 12px;color: red;position: absolute;top:284px;"></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">手机价格:</div>
+							<div class="input">
+								<input type="text" id="price" name="price" class="input-kuang"	placeholder="请输入价格"  onchange="checkPrice()"> 
+								<label id="lPrice" class="verify-class" style="font-size: 12px;color: red;position: absolute;top: 351px;" ></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">入库数量:</div>
+							<div class="input">
+								<input type="text" id="number" name="number" class="input-kuang"	placeholder="请输入数量"  onchange="checkNumber()"> 
+								<label id="lNumber" class="verify-class" style="font-size: 12px;color: red;position: absolute;top: 418px;" ></label>
+							</div>
+						</div>
+						<div class="input-lan">
+						<input type="button" class="btnCrop" id="btnCrop" value="保存">
+						</div>
+					</div>
+					</from>
+					<!--  -->
+					
+				</div>
+				<!-- 订单管理 -->
+				<div id="showOrderMg" class="right-content">
+					<div class="title center">
+						<ul class="inline title-ul">
+							<select id="ordermark" class="select">
+								<option value="orderCode">订单编号</option>
+								<option value="address">地址</option> 
+								<option value="userId">用户姓名</option> 
+								<option value="orderState">订单状态</option> 
+							</select>
+						</ul>
+						<input type="text" id="ordervalue" class="search" placeholder="搜索...">
+						<a type="button" class="btn" onclick='searchOrderByMark()'>搜索</a> 
+					</div>
+					<div>
+						<table id="orderTable" class="table no-padding">
+						</table>
+						<div class="page-class">
+							<span>共</span> <span id="totalPage1"></span> <span>页</span> <span>
+								当前页：</span><span id="currentPage1"></span>
+							<button class="page-btn" onclick="previousPage1()">上一页</button>
+							<button class="page-btn" onclick="nextPage1()">下一页</button>
+							<button class="page-btn" onclick="firstPage1()">首页</button>
+							<button class="page-btn" onclick="lastPage1()">尾页</button>
+						</div>
+					</div> 
+				</div>
+				<div id="viewOrder">
+				</div>
+				<!-- 库存管理 -->
+				<div id="showBackInfoMg" class="right-content">
+					<div>
+						<table id="storageTable" class="table no-padding storageTable">
+						</table>
+						 
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

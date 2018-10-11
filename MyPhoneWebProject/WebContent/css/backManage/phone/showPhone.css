@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+.single-color{
+	  background:#eee; 
+}
+.single-color:hover{
+	    background: white;
+}
+.double-color:hover{
+	    background: white;
+}
+.double-color{
+    background:#f2dede;  
+}
+.operation-btn{
+	display: inline-block;
+    color: rgba(0, 0, 0, 0.78);
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.operation-btn:hover{
+	background:#999;
+	color:white;
+}
+table{
+	margin: 0px auto;
+    width: 80%;
+    padding: 20px 0px;
+    border-spacing: 1px;
+}
+td{
+	    width: 15%;
+	    font-size: 13px;
+}
+.td1{
+	height:35px;	
+}

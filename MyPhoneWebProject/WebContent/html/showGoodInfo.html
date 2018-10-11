@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品信息</title>
+
+
+<link rel="stylesheet" href="../css/showGoodInfo.css">
+<link rel="stylesheet" href="../css/TopUserArea.css"> 
+<script src="../lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/showGoodInfo.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+<script type="text/javascript" src="../js/TopUserArea.js"></script>
+</head>
+<body>
+<div class="userArea">
+	<div class="layout">
+		<div class="userArea-left">
+			<a href="../html/Index.html"><span>华为官网 | 荣耀官网 | 软件应用 | 花粉俱乐部 | Select Region</span></a>
+		</div>
+		<div class="userArea-right">
+			<span id="userId" class='userId'></span> 
+			<a href='../html/VrewOrder.html'><span>&nbsp;&nbsp;&nbsp;我的订单</span></a> 
+			<a href='../html/cart.html'><span>&nbsp;&nbsp;&nbsp;购物车</span>
+			<span class="spCart-span" > <em>(</em><em id='spCart-span'>0</em><em>)</em></span>
+			 </a> 
+			
+		</div>
+	</div>
+</div>
+	<!-- logo -->
+ 	<a href="Index.html" style="text-decoration: none;">
+
+	<div class="head">
+		<div class="main-logo">
+			<img src="../images/huaweiLogo.png">
+		</div>
+		<div class="website-name">
+			<b >|</b> 
+			<b >华为商城</b>
+		</div>
+		<div class="">
+		</div>
+	</div>
+	</a>
+	<!--  -->
+	<!-- content -->
+	<div class="titleArea" id = "titleArea">
+		<div class="title-content">
+		<a href="Index.html"style="  color: #999; " ><p class="title">首页 ></a> <span id="titlePhoneName">商品名字</span></p>
+		</div>
+	</div>
+	<div class="goodInfoArea">
+		 <div class="goodInfo">
+		 	<div class="photo" id="photo">
+		 		
+		 	</div>
+		 	<div class="goodOtherInfo">
+		 		<div class="phonename">
+		 			<p><span class="margin-left " ></span><span id = "phoneName" class="nameFont"></span><p>
+		 			<p class="margin-left red">【移动端专享】领券可享100元优惠，点此领券</p>
+		 		</div>
+		 		<div class="info">
+		 			<p><span class="margin-left">华为价：</span><span id = "price" class="priceFont"></span></p>
+		 			<p><span class="margin-left">商品编码：</span><span id = "phoneCode"></span></p>
+		 			<p><span class="margin-left">运      费： </span><span class="red">满 99 免运费</span></p>
+		 			<p><span class="margin-left">服      务：由华为商城负责发货，并提供售后服务</span></p>
+		 			<p><span class="margin-left">支      持： 以旧换新，最高可抵5599元 购买送积分</span></p>
+		 			
+		 			
+		 		</div>
+		 		<div class="buy">
+			 		<div class="margin-left-top">
+				 		 <p class="pp">购买数量：</p>
+				 		  <span class="minus" id="num-jian" onclick="num_jianonclick()">-</span> 
+				 			 <input id="input-num" onchange="checkNum()" class="pro-quantity" type="text" value="1">
+				 		 <span class="plus" id="num-jia" onclick="num_jiaonclick()">+</span> 
+				 		 <span>库存：</span><span id = "phoneCount"></span>
+				 		</div>
+				 		<div class="operation-Area">
+				 			<a onclick="addCart()" class="addCartBtn" title="加入购物车">
+				 				<span>加入购物车</span>
+				 			</a>
+				 			<a onclick="orderNow()" class="orderNowBtn" title="立即下单">
+				 				<span>立即下单</span>
+				 			</a>
+				 		</div>
+				 		<div class="pro-popup-area" id="pro-popup-area">
+					 		<div class="pro-add-success">
+					 			 <dl>
+					 			 	<dt><img src="../images/TRUE.png"></dt>
+					 			 	<dd> 
+					 			 		<div class="pro-add-success-msg">成功加入购物车！</div>
+					 			 		<div class="pro-add-success-button"></div>
+					 			 		<a href="javascript:void(0)" class="addCartBtn" onclick='gotoCart()'>去结算</a>
+					 			 		<a href="javascript:void(0)"  class="guangBtn"  onclick='closePopup()'>再逛逛>></a>
+					 			 	</dd>
+					 			 </dl>
+					 		</div>
+				 		</div>
+			 		</div>
+		 	</div>
+		 </div>
+	</div>
+	<!--  -->
+</body>
+</html>

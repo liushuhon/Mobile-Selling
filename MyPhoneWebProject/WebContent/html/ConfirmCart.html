@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>确认订单</title>
+
+<link rel="stylesheet" href="../css/ConfirmCart.css"> 
+
+<link rel="stylesheet" href="../css/TopUserArea.css"> 
+<script src="../lib/jquery/jquery.js"></script>
+<script  src="../js/ConfirmCart.js"></script>
+<script type="text/javascript" src="../js/TopUserArea.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+ <script type="text/javascript" src="../js/jsAddress.js"></script>  
+</head>
+<body onpageshow=showConfirmCart()>
+<div class="userArea">
+	<div class="layout">
+		<div class="userArea-left">
+			<a href="../html/Index.html"><span>华为官网 | 荣耀官网 | 软件应用 | 花粉俱乐部 | Select Region</span></a>
+		</div>
+		<div class="userArea-right">
+			<span id="userId" class='userId'></span> 
+			<a href='../html/VrewOrder.html'><span>&nbsp;&nbsp;&nbsp;我的订单</span></a> 
+			<a href='../html/cart.html'><span>&nbsp;&nbsp;&nbsp;购物车</span>
+			<span class="spCart-span" > <em>(</em><em id='spCart-span'>0</em><em>)</em></span>
+			 </a> 
+			
+		</div>
+	</div>
+</div>
+ <div class="orderHeadArea">
+ 	<div class="orderHead">
+	 	<div class="left-logo" onclick="window.open('../html/Index.html','_self')" >
+	 	</div>
+ 		<div class="right-progress">
+ 			<div class="progress-cart" id="progress-cart"  > 
+ 			1我的购物车
+ 			</div>
+ 			<div class="progress-confirm" id="progress-confirm" >
+ 			2填写核对订单
+ 			</div>
+ 			<div class="progress-submit marginright0" id="progress-submit"  >
+ 			3提交订单	
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="layout">
+ 	  <div class="addArea">
+	 	  <span style=" font-size: 15px; ">收货人信息</span> 
+	 	  <a href="javascript:void(0)" onclick="popBox()">[使用新地址]</a>
+ 	  </div>
+ 	  <div id="light" class="white_content">
+ 	  
+		<a href="javascript:void(0)" onclick="closePopBox()" class="X">X</a>
+		<br>
+		<table id='addInfo' class='addInfo'>
+			<tr><h1 class="boxTitle">添加地址</h1></tr>
+			<tr>
+				<td><span style="margin-left: -10px;">收货人：</span></td>
+				<td><input type="text" id="consigner" class="boxText" ></td>
+				<td><label id='lConsigner '></label></td>
+			</tr>
+			<tr> 
+				<td><span>收货地址：</span></td>
+				<td><select id="cmbProvince" class="left select" name="cmbProvince"></select> 
+                <select id="cmbCity" class="left select" name="cmbCity"></select> 
+                 <select id="cmbArea" class="left select" name="cmbArea"></select></td>
+					   
+               <script type="text/javascript">  
+                    addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+               </script> 
+               
+			</tr>
+			<tr>
+				<td>详细地址：</td>
+				<td><input type="text" id="address" class="boxText" ></td>
+				<td><label id='lAddress '></label></td>
+			</tr>
+			<tr>
+				<td>手机号码：</td>
+				<td><input type="text" id="phoneNum" class="boxText"></td>
+				<td><label id='lPhoneNum'></label></td>
+			</tr>	 
+		</table>
+		<div class="boxBtnArea">
+			 <a href="javascript:void(0)" onclick="saveAddInfo()" class="addInfo-a"><span class="boxBtn">保存并使用</span></a> 
+			 <a href="javascript:void(0)" onclick="closePopBox()" class="addInfo-a"><span class="boxBtn">取消</span></a> 
+		</div>
+	  </div>
+  	  <div id="fade" class="black_overlay"></div>
+ 	<div class="addressArea" id="addressArea">
+ 		
+ 		<div id="address">
+ 		 	 
+ 		</div>
+ 	</div>
+ 	<div class="goodlist">
+ 			<div class="explain"><span style=" line-height: 26px;">以下商品由 华为商城 选择合作快递</span></div>
+	 		<div >
+	 				<table class="titletab">
+	 					<tr>
+	 						<td class="titletab-good">商品</td>
+	 						<td class="titletab-other">价格(元)</td>
+	 						<td class="titletab-other">数量</td>
+	 						<td class="titletab-other">小计(元)</td>
+	 					</tr>
+	 				</table>
+	 		</div>
+ 			<div id="goods"  >
+ 				<div id = "Middle" class="goods-table"  cellpadding="0" cellspacing="0">
+ 				</div>
+ 			</div>
+			<div class="sum"> 
+				<div class="btn">
+					<input class="sub-btn" id='sub-btn' type="button" value="提交订单" onclick="submitOrder()">
+				</div>
+				<div class="totalpriceArea">
+					 <span onclick="goBack()" class="back">&nbsp;&nbsp;>>再逛逛<<&nbsp;&nbsp;</span>
+					<span class="sum-price">合计(不含运费)：￥</span><span id="total"
+						class="sum-price sum-price-font"> </span><span class="sum-price">.00</span>
+				</div>
+				
+			</div>
+	</div>
+ </div>
+</body>
+</html>

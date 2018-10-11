@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/Index.css">
+<link rel="stylesheet" href="../css/SearchBar.css">
+
+<link rel="stylesheet" href="../css/Search.css">
+<script src="../lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/Index.js"></script>
+<script type="text/javascript" src="../js/search.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+<script src="../js/SearchBar.js"></script>
+</head>
+<body onpageshow=showCurUser()>
+	<div class="header">
+		<div class="layout">
+			<div class="logo">
+				<a href="Index.html"><img src="../images/logoVMALL.png"></a>
+			</div>
+			<div class="exitArea">
+				<div id="exit" class="exit">退出</div>
+			</div>
+			<div class="registerAndLogin" id="registerAndLogin">
+				<div class="kuang" id="kuang">
+					<a href="Login.html">登录</a> <em>&nbsp;&nbsp;|&nbsp;&nbsp;</em> <a
+						href="Register.html">注册</a>
+				</div>
+				<div class="b" id='b'>
+					<span><a href="../html/VrewOrder.html">&nbsp;&nbsp;&nbsp;查看我的订单</a></span>
+				</div>
+			</div>
+			<div class="spCart">
+				<div class="cart" id="cart" onclick="toCart()">
+					<a href="../html/cart.html" target="_blank"> <img
+						src="../images/shoppingcart.png" style="margin-top: 7px;"> <span
+						class="spCart-span"> <em id='spCart-span'>0</em>
+					</span>
+					</a>
+				</div>
+			</div>
+			<div class="searchBar"> 
+				<div id="search" class="searchkuang">
+					<input type="text" id="search-text" class="searchBar-text" name="search-text" placeholder="搜索从这里开始……" />
+				    <input type="button" id="submit" class="searchBar-button" value="搜索" onclick='searchOnClick()' />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="background" style="padding-top: 27px;">
+		<div class="goodsNum"><span>搜索&nbsp;[<span id='searchContent' class='searchContent'></span>]&nbsp;共搜索到商品</span><span id='goodsNum'></span><span>件</span></div>
+			 
+		<div class="layout2" > 
+				<ul id='goods1' class="clearfix" style="margin: 0px; padding: 0px; height: 600px;">
+				</ul>
+			 
+			</div> 
+	</div>
+</body>
+</html>

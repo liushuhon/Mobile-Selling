@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+.goodsNum {
+    height: 30px;
+    width: 1200px;
+    margin: 0px auto;
+    color: #666;
+}
+.searchContent{
+	    color: red;
+    font-size: 14px;!important
+}
+.sort {
+	line-height: 50px;
+    height: 50px; 
+    margin-bottom: 21px;
+    width: 1200px; 
+    background: #fff;
+    margin: 0px auto;
+    margin-bottom: 21px;
+}
+.sort-span {
+    color: rgba(158, 158, 158, 0.87);
+    padding-left: 10px;
+}
+.sort span:hover{
+	cursor:pointer;
+}

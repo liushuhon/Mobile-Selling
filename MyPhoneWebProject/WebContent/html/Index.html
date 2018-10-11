@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>华为商城官网</title>
+<link rel="stylesheet" href="../css/Index.css">
+<link rel="stylesheet" href="../css/SearchBar.css">
+<script src="../lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="../js/Index.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+<script src="../js/SearchBar.js"></script>
+<style type="text/css">
+#tab { overflow:hidden; width:1400px; height:450px; position:relative; float:left;}
+#tab>img:not(:first-child){ display:none; }
+</style>
+<script>
+    window.onload = function(){
+        var images = document.getElementsByName('img');
+        var pos = 0;
+        var len = images.length;
+        setInterval(function(){
+            images[pos].style.display = 'none';
+            pos = ++pos == len ? 0 : pos;
+            images[pos].style.display = 'inline';
+        },2000);
+    };
+</script>
+</head>
+<body  >
+	<!-- 头部 -->
+	<div class="header">
+		<div class="layout">
+			<div class="logo">
+				<a href="Index.html"><img src="../images/logoVMALL.png"></a>
+			</div>
+			<div class="exitArea">
+				<div id="exit" class="exit">退出</div>
+			</div>
+			<div class="registerAndLogin" id="registerAndLogin">
+				<div class="kuang" id="kuang">
+					<a href="Login.html">登录</a> <em>&nbsp;&nbsp;|&nbsp;&nbsp;</em> <a
+						href="Register.html">注册</a>
+				</div>
+				<div class="b" id='b'>
+					<span><a href="../html/VrewOrder.html">&nbsp;&nbsp;&nbsp;查看我的订单</a></span>
+				</div>
+			</div>
+			<div class="spCart">
+				<div class="cart" id="cart" onclick="toCart()">
+					  <img
+						src="../images/shoppingcart.png" style="margin-top: 7px;"> <span
+						class="spCart-span"> <em id='spCart-span'>0</em>
+					</span>
+					 
+				</div>
+			</div>
+			<div class="searchBar">
+				<div id="search" class="searchkuang">
+					 <input type="text" id="search-text" class="searchBar-text" name="search-text" placeholder="搜索从这里开始……" />
+					 <input type="button" id="submit" class="searchBar-button" value="搜索" onclick='searchOnClick()' />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  -->
+	<!-- 导航 -->
+	<div class="naver-main">
+		<div class="layout">
+			<div class="naver">
+				<ul id="naver-list">
+					<li id="index"><a href="Index.html"><span>首 页</span></a></li>
+					<li id="huawei"><a href="Index.html"><span>华为专区</span></a></li>
+					<li id="huaweip10"><a href="Index.html"><span>HUAWEI
+								P10</span></a></li>
+					<li id="honor9"><a href="Index.html"><span>荣耀9</span></a></li>
+					<li id="nova2"><a href="Index.html"><span>HUAWEI
+								nova2</span></a></li>
+					<li id="honorV9"><a href="Index.html"><span>荣耀V9</span></a></li>
+				</ul>
+			</div>
+			<div class="category">
+				<div class="cg">
+					<h2 class="category-h2">全部商品</h2>
+				</div>
+				<div class="vertival-nav">
+					<ol class="category-list">
+						<li id="nav_0" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">手机</a>
+								</h3>
+								<a href="#"><span>荣耀</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>HUAWEI&nbsp;P系列</span></a>
+							</div>
+						</li>
+						<li id="nav_1" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">笔记本&nbsp;&&nbsp;平板</a>
+								</h3>
+								<a href="#"><span>平板电脑</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>笔记本电脑</span></a>
+							</div>
+						</li>
+						<li id="nav_2" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">穿戴</a>
+								</h3>
+								<a href="#"><span>手环</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>手表</span></a>
+							</div>
+						</li>
+						<li id="nav_3" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">智能家居</a>
+								</h3>
+								<a href="#"><span>子母路由</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>电视盒子</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>路由器</span></a>
+							</div>
+						</li>
+						<li id="nav_4" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">通用配件</a>
+								</h3>
+								<a href="#"><span>移动电源</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>耳机</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>音箱</span></a>
+							</div>
+						</li>
+						<li id="nav_5" class="category-item">
+							<div class="category-info">
+								<h3>
+									<a href="#">专属配件</a>
+								</h3>
+								<a href="#"><span>保护壳</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>保护套</span></a><span>&nbsp;&nbsp;</span> <a
+									href="#"><span>贴膜</span></a>
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  -->
+	<!-- 背景 -->
+	<div class="hot-borad">
+		<div class="hb" id="index_slider">
+			<!-- <ul class="hb-list">
+				<li class="hb-list-item"></li>
+			</ul> -->
+			<div id="tab" class='hb-list'>
+		   		<img src="../images/hb2.jpg" name='img' width="100%" height="100%"/>
+		   		<img src="../images/hb3.jpg" name='img' width="100%" height="100%"/>
+		   		<img src="../images/hb4.jpg"  name='img' width="100%" height="100%"/>
+		   		<img src="../images/hb5.jpg" name='img' width="100%" height="100%"/> 
+			</div>
+		</div>
+	</div>
+	<!--  -->
+	<!-- goods -->
+	<div class="background">
+		<div class="layout2">
+			<div class="title">
+				<h2>热销单品</h2>
+			</div>
+			<ul id='goods' class="clearfix" style="margin: 0px; padding: 0px; height: 600px;">
+			</ul>
+
+		</div>
+
+		<!-- <div class="goodsphoto">
+						<div class="goods-left">
+							<ul style="margin: 0px; padding: 0px; margin-left: -10px;">
+								<li class="grid-items">
+									<div id="item9" class="thumb" onclick=""></div>
+								</li>
+								<li class="grid-items">
+									<div id="item10"></div>
+								</li>
+							</ul>
+						</div>
+						<div class="goods-right">
+							<ul class="clearfix"
+								style="margin: 0px; padding: 0px; height: 600px;">
+								<li class="grid-items">
+									<div id="item1" class="thumb"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item2"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item3"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item4"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item5"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item6"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item7"></div>
+								</li>
+								<li class="grid-items">
+									<div id="item8"></div>
+								</li>
+
+							</ul>
+						</div>
+					</div> -->
+			 
+		 
+	</div>
+	<!--  -->
+	<!--  -->
+</body>
+</html>

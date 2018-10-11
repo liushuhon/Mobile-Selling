@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册华为帐号</title>
+<link rel="stylesheet" href="../css/Register.css">
+<script src="../lib/jquery/jquery.js"></script> 
+<script src="../js/Register.js"></script>
+</head>
+<body class="reg">
+	<!-- 头部 -->
+	<div class="head-background">
+		<div class="head_center">
+			<div class="main-logo">
+				<img src="../images/headLogo.png">
+			</div>
+			<div class="website-name">
+				<b class="font">|</b> <b class="font">华为商城</b>
+			</div>
+		</div>
+	</div>
+	<!-- 内容 -->
+	<div class="content">
+		<div class="reg-content">
+		<!-- 表单 -->
+			<form name="registerForm"  >
+				<div class="reg-tab">
+					已有华为账号 <a href="Login.html" class="login-a">登陆</a><span>▶</span>
+				</div>
+				<div class="reg-detail">
+					<h3 class="reg-title">注册华为账号</h3>
+					<p class="node-intro">华为账号适用于访问所有华为服务。</p>
+					<div class="box-shadow-in"></div>
+					<!-- 国家/地区 -->
+					
+					<div class="node">
+						<div class="node-title">华为账号</div>
+						<div class="node-intro">输入手机号作为您的华为帐号，用于登录、重设密码、验证身份。</div>
+						<div class="input-lan">
+							<div class="input-intro">手机号:</div>
+							<div class="input">
+								<input type="text" id="phoneNumber" name="phoneNumber" class="input-kuang" placeholder="请输入手机号" onblur="checkNum()">
+								<label id="lphoneNumber" class="verify-class"></label>
+							</div>
+						</div>
+						<div class="box-shadow-in"></div>
+					</div>
+					<div class="node">
+						<div class="node-title">单位</div>
+						<div class="node-intro">请输入你所在的单位</div>
+						<div class="input-lan">
+							<div class="input-intro">单位名称:</div>
+							<div class="input">
+								<input type="text" id="unit" name="unit" class="input-kuang" placeholder="请输入单位名称" onblur="checkUnit()" >
+								<label id="lunit" class="verify-class"></label>
+							</div>
+						</div>
+						<div class="box-shadow-in"></div>
+					</div>
+					<div class="node">
+						<div class="node-title">出生日期</div>
+						<div class="node-intro">请输入出生日期</div>
+						<div class="input-lan">
+							<div class="input-intro">出生日期:</div>
+							<div class="input">
+								<input type="date" id="birth" name="birth" class="input-kuang" placeholder="请输入出生日期" onblur="checkBirth()"  >
+								<label id="lbirth" class="verify-class"></label>
+							</div>
+						</div>
+						<div class="box-shadow-in"></div>
+					</div>
+					<div class="node">
+						<div class="node-title">设置登录密码</div>
+						<div class="input-lan">
+							<div class="input-intro">密码:</div>
+							<div class="input">
+								<input type="password" id="password" name="password"
+									class="input-kuang mima" placeholder="请设置密码" onblur="checkPwd()">
+									<label id="lpwd" class="verify-class"></label>
+							</div>
+						</div>
+						<div class="input-lan">
+							<div class="input-intro">确认密码:</div>
+							<div class="input">
+								<input type="password" id="rePassword" name="rePassword"
+									class="input-kuang1" placeholder="请确认输入密码" onblur="checkRePwd()">
+									<label id="lrepwd" class="verify-class"></label>
+							</div>
+						</div>
+						<div class="box-shadow-in"></div>
+					</div>
+					<div class="node">
+						<div class="node-title">华为帐号服务条款</div>
+						<div class="input-lan">
+							<div class="agrLineH">华为将为您创建唯一的华为帐号，来标识您和提供更优服务，且需搜集和处理以下信息：</div>
+							<div class="agrLineH">•&nbsp;&nbsp;设备信息，包括：IMEI、IMSI、SN、国家/地区、语言、型号和版本号；</div>
+							<div class="agrLineH">•&nbsp;&nbsp;个人信息，包括：手机号、邮件地址、密码、头像、昵称、生日、姓名和性别；</div>
+							<div class="agrLineH">上述数据将传输并保存至华为全球的服务器。您可通过销户删除所有个人数据。</div>
+							<div class="agrLineH">华为帐号用户可以通过手机号或邮件地址搜索到您，并可查看您的公开信息，包括：头像、昵称、城市等。您也可以在华为帐号的设置中关闭此功能。</div>
+						</div>
+						<div class="box-shadow-in"></div>
+					</div>
+					<div class="reg-button">
+						<input type="button" onclick="getElement()" class="btn" value="注册">
+					</div>
+				</div>
+				<div class="box-shadow"></div>
+			</form>
+		</div>
+		<div class="box-shadow"></div>
+	</div>
+	<!-- 尾部 -->
+	<div class="tail">
+		<div>用户协议 | 隐私政策 | 常见问题</div>
+		<div>Copyright @ 2011-2017 华为软件技术有限公司 版权所有 保留一切权利 苏B2-20070200号
+			| 苏ICP备09062682号-9</div>
+	</div>
+</body>
+</html>

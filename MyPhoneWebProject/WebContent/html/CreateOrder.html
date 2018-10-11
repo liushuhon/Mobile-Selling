@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>创建订单</title>
+<link rel="stylesheet" href="../css/CreateOrder.css"> 
+<link rel="stylesheet" href="../css/TopUserArea.css"> 
+<script src="../lib/jquery/jquery.js"></script>
+<script  src="../js/CreateOrder.js"></script>
+<script type="text/javascript" src="../js/getCurUser.js"></script>
+<script type="text/javascript" src="../js/TopUserArea.js"></script>
+</head>
+<body>
+<div class="userArea">
+	<div class="layout">
+		<div class="userArea-left">
+			<a href="../html/Index.html"><span>华为官网 | 荣耀官网 | 软件应用 | 花粉俱乐部 | Select Region</span></a>
+		</div>
+		<div class="userArea-right">
+			<span id="userId" class='userId'></span> 
+			<a href='../html/VrewOrder.html'><span>&nbsp;&nbsp;&nbsp;我的订单</span></a> 
+			<a href='../html/cart.html'><span>&nbsp;&nbsp;&nbsp;购物车</span>
+			<span class="spCart-span" > <em>(</em><em id='spCart-span'>0</em><em>)</em></span>
+			 </a> 
+			
+		</div>
+	</div>
+</div>
+ <div class="orderHeadArea">
+ 	<div class="orderHead">
+	 	<div class="left-logo" onclick="window.open('../html/Index.html','_self')" >
+	 	</div>
+ 		<div class="right-progress">
+ 			<div class="progress-cart" id="progress-cart"  > 
+ 			1我的购物车
+ 			</div>
+ 			<div class="progress-confirm" id="progress-confirm" >
+ 			2填写核对订单
+ 			</div>
+ 			<div class="progress-submit marginright0" id="progress-submit"  >
+ 			3提交订单	
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ 
+  <div class="layout">
+  	<div class="showSuccessArea">
+  		<img src="../images/succeed.jpg" style=" float: left;"> 
+  		<div class="area-font"><span>您的订单提交成功!</span></div>
+  		<div class="checkOrder"><span  onclick="viewOrder()">点击查看订单</span ></div>
+  	</div>
+  </div>
+</body>
+</html>

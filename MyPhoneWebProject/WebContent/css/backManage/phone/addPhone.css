@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+body {
+ font-family: "微软雅黑";
+ background:rgba(221, 221, 221, 0.83);
+}
+.reg-content{
+ text-align: center;
+  
+    width: 70%;
+   
+    margin: 0px auto;
+ 
+}
+.center{
+	text-align:center;
+}
+.Photo {
+    width: 400px;
+    height: 315px;
+    padding-left: 50px;
+    background: white;
+    margin-bottom: 10px;
+}
+.node-title{
+	font-size:14px;
+	font-weight:bold;
+	margin-top: 25px;
+}
+.input-lan {
+    margin: 12px 0px 12px 0px;
+}
+.input-intro{
+	color: #999;
+    margin: 19px 0px 0px 0px;
+    font-size: 12px;
+    float:left;
+    padding: 5px;
+}
+.input{
+	
+}
+.input-kuang{
+	margin-top: 18px;
+    margin-left: -70px;
+    width: 280px;
+    height: 25px;
+    /* border-radius: 0px; */
+    padding: 5px 9px;
+    border: 1px solid #c5c5c5;
+    font-size: 12px;
+}
+.left-content{
+	width: 50%;
+    float: left;
+}
+.right-content{
+	padding: 38px 0px;
+    width: 50%;
+    float: right;
+}
